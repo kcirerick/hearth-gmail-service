@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to my app! /n To log-in, navigate to http://localhost:3000/auth/google/');
+  res.send('Welcome to my app! To log-in, navigate to http://localhost:3000/auth/google/');
 });
 
 app.use('/auth/google', authRoutes);

@@ -42,7 +42,7 @@ router.get('/', async (req, res, next) => {
         res.render('contacts', { contacts });
     }
     catch (error) {
-        next(error);
+        res.send('Welcome to my app! On this page, you will find a list of contacts from whom you\'ve received an email, but first you must log-in. To log-in, navigate to http://localhost:3000/auth/google/');
     }
 });
 exports.default = router;
