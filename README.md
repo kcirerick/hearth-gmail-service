@@ -12,6 +12,7 @@ CLIENT_SECRET=your_client_secret
 REDIRECT_URI=http://localhost:3000/auth/google/callback
 
 Replace 'your_client_id' and 'your_client_secret' with a client ID and client secret that you can obtain from the Google Cloud Console.
+Then run 'export $(xargs < .env)' to export the variables. 
 
 3) In the root directory of your folder, run 'npm install' to install dependencies.
 
