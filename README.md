@@ -2,7 +2,7 @@
 Creates a back-end service that interacts with the gmail API to retrieve contact information from email exchanges.
 
 
-Follow the following steps to run this code on your local machine:
+# Follow the following steps to run this code on your local machine:
 
 1) Clone the project to your github repo.
 
@@ -23,7 +23,7 @@ NOTE: You will likely need to reach out to enriquezerick18@gmail.com to get adde
 
 6) Once you are logged in, you will be redirected to 'http://localhost:3000/contacts', you should be able to see 100 unique contacts with whom you have exchanged emails.
 
-A few notes about the project:
+# A few notes about the project:
 - Because the statement "return 100 contacts from emails exchanged" was ambiguous, I took this to mean "Return 100 unique contacts from whom you have received at least one email", but this is an assumption that should not be overlooked.
 - Most of the relevant code is in src/ or views/ except for the depdendencies and configurations. 
 - This submission represents ~5.5 hrs of work
