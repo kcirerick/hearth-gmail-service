@@ -27,6 +27,3 @@ A few notes about the project:
 - Because the statement "return 100 contacts from emails exchanged" was ambiguous, I took this to mean "Return 100 unique contacts from whom you have received at least one email", but this is an assumption that should not be overlooked.
 - Most of the relevant code is in src/ or views/ except for the depdendencies and configurations. 
 - This submission represents ~5.5 hrs of work
-- I feel confident in my ability to add a simple persistence layer with ~1hr of additional work
-- I have not written tests in jest before and burnt up a bit of time trying to set them up.
-- I have never actually used node.js or typescript before but didn't find that it was particularly difficult to pick it up.
