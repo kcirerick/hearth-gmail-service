@@ -26,7 +26,7 @@ router.get('/callback', async (req, res, next) => {
         // Use the access token to make API requests
         client.setCredentials(tokens);
         // Redirect the user to the contacts page
-        res.redirect('/contacts'); // TODO implement contacts
+        res.redirect('/contacts');
     }
     catch (error) {
         next(error);
