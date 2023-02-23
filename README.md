@@ -2,7 +2,7 @@
 Creates a back-end service that interacts with the gmail API to retrieve contact information from email exchanges.
 
 
-# Follow the following steps to run this code on your local machine:
+# Running the project locally:
 
 1) Clone the project to your github repo.
 
