@@ -38,16 +38,9 @@ class Server {
   }
 
   private routerConfig() {
-     this.app.use('/contacts', (req, res, next) => {
-       console.log('made it in here 1', req.url);
-       next();
-     }, contactsRouter);
-     this.app.use('/auth/google', (req, res, next) => {
-       console.log('made it in here 2', req.url);
-       next();
-     }, authRouter);
+     this.app.use('/auth/google', authRouter);
+     this.app.use('/contacts', contactsRouter);
      this.app.use('/', (req: Request, res: Response) => {
-       console.log('made it in here 3', req.url);
        res.send('Welcome to my page!');
      });
   }

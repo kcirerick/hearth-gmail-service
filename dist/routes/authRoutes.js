@@ -10,7 +10,6 @@ const client = new google_auth_library_1.OAuth2Client(process.env.CLIENT_ID, pro
 exports.client = client;
 const router = express_1.default.Router();
 router.get('/', (req, res) => {
-    console.log('inside auth get route', req.url, client);
     const authUrl = client.generateAuthUrl({
         access_type: 'offline',
         scope: [

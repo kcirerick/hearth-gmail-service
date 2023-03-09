@@ -8,10 +8,6 @@ const express_1 = require("express");
 const contactsController_1 = __importDefault(require("../controllers/contactsController"));
 const contactsRouter = (0, express_1.Router)();
 const contactsController = new contactsController_1.default();
-contactsRouter.get('/', (req, res, next) => {
-    console.log('inside router');
-    res.send('contacts');
-    next();
-}, contactsController.get);
+contactsRouter.get('/', contactsController.get);
 exports.default = contactsRouter;
 //# sourceMappingURL=contactRoutes.js.map

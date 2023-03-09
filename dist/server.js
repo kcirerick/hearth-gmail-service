@@ -44,16 +44,9 @@ class Server {
         //     });
     }
     routerConfig() {
-        this.app.use('/contacts', (req, res, next) => {
-            console.log('made it in here 1', req.url);
-            next();
-        }, contactRoutes_1.default);
-        this.app.use('/auth/google', (req, res, next) => {
-            console.log('made it in here 2', req.url);
-            next();
-        }, authRoutes_1.default);
+        this.app.use('/auth/google', authRoutes_1.default);
+        this.app.use('/contacts', contactRoutes_1.default);
         this.app.use('/', (req, res) => {
-            console.log('made it in here 3', req.url);
             res.send('Welcome to my page!');
         });
     }
