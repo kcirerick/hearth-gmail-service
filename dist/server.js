@@ -26,7 +26,6 @@ class Server {
     config() {
         this.app.use(body_parser_1.default.urlencoded({ extended: true }));
         this.app.use(body_parser_1.default.json({ limit: '1mb' })); // 100mkb default
-        this.app.set('view engine', 'ejs');
         this.app.use((0, helmet_1.default)());
         this.app.use(function (req, res, next) {
             if ((0, toobusy_js_1.default)()) {
@@ -36,6 +35,7 @@ class Server {
                 next();
             }
         });
+        this.app.set('view engine', 'ejs');
     }
     dbConnect() {
         //     pool.connect(function (err, client, done) {
@@ -47,7 +47,7 @@ class Server {
         this.app.use('/auth/google', authRoutes_1.default);
         this.app.use('/contacts', contactRoutes_1.default);
         this.app.use('/', (req, res) => {
-            res.send('Welcome to my page!');
+            res.send('Welcome to my page with nodemon!');
         });
     }
 }

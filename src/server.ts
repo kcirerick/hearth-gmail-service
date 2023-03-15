@@ -19,7 +19,6 @@ class Server {
   private config() {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(bodyParser.json({ limit: '1mb' })); // 100mkb default
-    this.app.set('view engine', 'ejs');
     this.app.use(helmet());
     this.app.use(function(req, res, next) {
       if(toobusy()) {
@@ -28,6 +27,7 @@ class Server {
         next();
       }
     });
+    this.app.set('view engine', 'ejs');
   }
 
   private dbConnect() {

@@ -9,6 +9,7 @@ const maxMessages = maxResults  * 10; // Retrieve more messages than the desired
 
 class ContactsController {
   public async get(req: Request, res: Response, next: NextFunction) {
+    console.log('got into controller');
     try {
       const gmail = google.gmail({ version: 'v1', auth: client });
       const messages = await gmail.users.messages.list({userId: 'me', maxResults: maxMessages});
@@ -37,7 +38,7 @@ class ContactsController {
       const contacts = Array.from(new Set(messageDetails?.map(messageDetails => messageDetails?.from)));
 
       // Render contacts page
-      res.render('contacts page', { contacts });
+      res.render('contacts', { contacts });
     } catch (error) {
       res.send('Welcome to my app! On this page, you will find a list of contacts from whom you\'ve received an email, but first you must log-in. To log-in, navigate to http://localhost:3000/auth/google/');
     }
