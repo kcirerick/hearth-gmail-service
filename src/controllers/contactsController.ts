@@ -37,7 +37,7 @@ class ContactsController {
       const contacts = Array.from(new Set(messageDetails?.map(messageDetails => messageDetails?.from)));
 
       // Render contacts page
-      res.render('contacts', { contacts });
+      res.render('contacts page', { contacts });
     } catch (error) {
       res.send('Welcome to my app! On this page, you will find a list of contacts from whom you\'ve received an email, but first you must log-in. To log-in, navigate to http://localhost:3000/auth/google/');
     }

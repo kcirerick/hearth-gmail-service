@@ -41,7 +41,7 @@ class Server {
      this.app.use('/auth/google', authRouter);
      this.app.use('/contacts', contactsRouter);
      this.app.use('/', (req: Request, res: Response) => {
-       res.send('Welcome to my page!');
+       res.send('Welcome to my page with nodemon!');
      });
   }
 
