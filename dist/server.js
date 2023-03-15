@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const contactRoutes_1 = __importDefault(require("./routes/contactRoutes"));
+const pineconeRoutes_1 = __importDefault(require("./routes/pineconeRoutes"));
 const helmet_1 = __importDefault(require("helmet"));
 const toobusy_js_1 = __importDefault(require("toobusy-js"));
 class Server {
@@ -44,6 +45,7 @@ class Server {
         //     });
     }
     routerConfig() {
+        this.app.use('/pinecone', pineconeRoutes_1.default);
         this.app.use('/auth/google', authRoutes_1.default);
         this.app.use('/contacts', contactRoutes_1.default);
         this.app.use('/', (req, res) => {

@@ -9,7 +9,6 @@ const maxMessages = maxResults  * 10; // Retrieve more messages than the desired
 
 class ContactsController {
   public async get(req: Request, res: Response, next: NextFunction) {
-    console.log('got into controller');
     try {
       const gmail = google.gmail({ version: 'v1', auth: client });
       const messages = await gmail.users.messages.list({userId: 'me', maxResults: maxMessages});

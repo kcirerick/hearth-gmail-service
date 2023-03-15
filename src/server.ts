@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import pool from './dbconfig/dbconnector';
 import authRouter from './routes/authRoutes';
 import contactsRouter from './routes/contactRoutes';
+import pineconeRouter from './routes/pineconeRoutes';
 import helmet from 'helmet';
 import toobusy from 'toobusy-js';
 
@@ -38,6 +39,7 @@ class Server {
   }
 
   private routerConfig() {
+     this.app.use('/pinecone', pineconeRouter)
      this.app.use('/auth/google', authRouter);
      this.app.use('/contacts', contactsRouter);
      this.app.use('/', (req: Request, res: Response) => {
