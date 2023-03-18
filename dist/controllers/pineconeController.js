@@ -18,32 +18,36 @@ class PineconeController {
             res.send("Missing API KEY");
         }
         const indexName = "first-index";
-        const indexes = await pineconeDB_1.default.listIndexes();
+        /* const indexes = await pinecone.listIndexes();
         if (indexes.includes(indexName)) {
-            await pineconeDB_1.default.deleteIndex({ indexName: indexName });
+          await pinecone.deleteIndex({ indexName: indexName });
+          console.log("Deleting index...");
+          await new Promise((resolve) => setTimeout(resolve, 3000)); // Wait for index to get deleted.
+          console.log("Deleted");
         }
-        await pineconeDB_1.default.createIndex({
-            createRequest: {
-                name: indexName,
-                dimension: 3,
-                metric: "cosine"
-            }
+    
+        await pinecone.createIndex({
+          createRequest: {
+            name: indexName,
+            dimension: 3,
+            metric: "cosine"
+          }
         });
-        const Index = pineconeDB_1.default.Index("first-index");
+        console.log("Creating new index");
+        await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait for index to get deleted.
+        console.log("Index created"); */
+        const Index = pineconeDB_1.default.Index(indexName);
         const upsertRequest = {
-            vectors: [
+            "vectors": [
                 {
                     id: "vec1",
-                    vector: [0.1, 0.2, 0.3],
-                    metadata: {
-                        genre: "drama",
-                    },
+                    values: [1, 2, 3],
                 }
-            ],
-            namespace: "example-namespace"
+            ]
         };
         const upsertResponse = await Index.upsert({ upsertRequest });
         res.send(upsertResponse);
+        //res.send('deleted and created index');
     }
 }
 exports.default = PineconeController;

@@ -5,12 +5,13 @@ const API_KEY = process.env.PINECONE_API_KEY;
 const ENVIRONMENT = "us-east-1-aws";
 
 class PineconeController {
+
   public async get(req: Request, res: Response, next: NextFunction) {
     if (typeof API_KEY !== 'undefined') {
-     await pinecone.init({
-       environment: ENVIRONMENT,
-       apiKey: API_KEY
-     });
+      await pinecone.init({
+        environment: ENVIRONMENT,
+        apiKey: API_KEY
+      });
     } else {
       res.send("Missing API KEY");
     }
@@ -19,6 +20,9 @@ class PineconeController {
     const indexes = await pinecone.listIndexes();
     if (indexes.includes(indexName)) {
       await pinecone.deleteIndex({ indexName: indexName });
+      console.log("Deleting index...");
+      await new Promise((resolve) => setTimeout(resolve, 3000)); // Wait for index to get deleted.
+      console.log("Deleted");
     }
 
     await pinecone.createIndex({
@@ -28,24 +32,24 @@ class PineconeController {
         metric: "cosine"
       }
     });
+    console.log("Creating new index");
+    await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait for index to get deleted.
+    console.log("Index created");
 
-    const Index = pinecone.Index("first-index");
+    const Index = pinecone.Index(indexName);
 
     const upsertRequest: any = {
-      vectors: [
+      "vectors": [
         {
           id: "vec1",
-          vector: [0.1, 0.2, 0.3],
-          metadata: {
-            genre: "drama",
-          },
+          values: [1, 2, 3],
         }
-      ],
-      namespace: "example-namespace"
-    }
+      ]
+    };
 
     const upsertResponse = await Index.upsert({ upsertRequest });
     res.send(upsertResponse);
+    //res.send('deleted and created index');
   }
 }
 

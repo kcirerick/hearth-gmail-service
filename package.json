@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "type": "module",
-    "start": "nodemon node dist/app.js"
+    "start": "npx tsc && nodemon node dist/app.js"
   },
   "directories": {
     "test": "tests"
