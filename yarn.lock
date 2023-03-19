@@ -575,6 +575,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@pinecone-database/pinecone@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.npmjs.org/@pinecone-database/pinecone/-/pinecone-0.0.10.tgz"
+  integrity sha512-SwfobqOmSQvEkEtw44uc6ZZ9R/aU5bDYkBAX0cGOcSk6wWlm5yiJA+XeZkyMeUsFb1EQaGhbafIy97TDqcnnsw==
+  dependencies:
+    cross-fetch "^3.1.5"
+
 "@sinclair/typebox@^0.25.16":
   version "0.25.23"
   resolved "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.25.23.tgz"
@@ -1464,6 +1471,13 @@ create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
+
+cross-fetch@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.5.tgz"
+  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
+  dependencies:
+    node-fetch "2.6.7"
 
 cross-spawn@^7.0.3:
   version "7.0.3"
@@ -2810,6 +2824,13 @@ node-fetch@^2.6.7, node-fetch@^2.6.9:
   dependencies:
     whatwg-url "^5.0.0"
 
+node-fetch@2.6.7:
+  version "2.6.7"
+  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
+
 node-forge@^1.3.1:
   version "1.3.1"
   resolved "https://registry.npmjs.org/node-forge/-/node-forge-1.3.1.tgz"
@@ -3692,9 +3713,9 @@ webpack-sources@^3.2.3:
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
 webpack@^5.0.0, webpack@^5.1.0, webpack@^5.75.0, webpack@5.x.x:
-  version "5.75.0"
-  resolved "https://registry.npmjs.org/webpack/-/webpack-5.75.0.tgz"
-  integrity sha512-piaIaoVJlqMsPtX/+3KTTO6jfvrSYgauFVdt8cr9LTHKmcq/AMd4mhzsiP7ZF/PGRNPGA8336jldh9l2Kt2ogQ==
+  version "5.76.1"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.76.1.tgz"
+  integrity sha512-4+YIK4Abzv8172/SGqObnUjaIHjLEuUasz9EwQj/9xmPPkYJy2Mh03Q/lJfSD3YLzbxy5FeTq5Uw0323Oh6SJQ==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
